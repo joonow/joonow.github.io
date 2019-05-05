@@ -1,16 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title><![CDATA[test]]></title>
-    <url>%2F2019%2F05%2F05%2Ftest%2F</url>
-    <content type="text"></content>
+<search> 
+  
+  
+    
+    <entry>
+      <title>test</title>
+      <link href="/2019/05/05/test/"/>
+      <url>/2019/05/05/test/</url>
+      
+        <content type="html"><![CDATA[<p>测试一下，不会怀孕吧</p><h1 id="H1"><a href="#H1" class="headerlink" title="H1"></a>H1</h1><h2 id="H2"><a href="#H2" class="headerlink" title="H2"></a>H2</h2><h3 id="H3"><a href="#H3" class="headerlink" title="H3"></a>H3</h3><h4 id="H4"><a href="#H4" class="headerlink" title="H4"></a>H4</h4><h5 id="H5"><a href="#H5" class="headerlink" title="H5"></a>H5</h5><h6 id="H6"><a href="#H6" class="headerlink" title="H6"></a>H6</h6><p><strong>这是加粗</strong></p><p><em>这是斜体</em></p><p><code>这是代码框</code></p><p><a href>这是链接</a></p><blockquote><p>这是引用</p></blockquote><ol><li>有</li><li>序</li><li>列</li><li>表</li></ol><ul><li>无序</li><li><p>列表</p></li><li><p>[ ] 这是选择框</p></li></ul><p>这是图片</p><p><img src="https://i.loli.net/2019/05/05/5ccf0343cc28b.png" alt></p><p>这是</p><p>[^脚注]: </p><p>这是分割线</p><hr><p>这是表格</p><table><thead><tr><th style="text-align:center">型号</th><th>品牌</th><th>价格</th></tr></thead><tbody><tr><td style="text-align:center">小米手机9</td><td>小米</td><td>2999</td></tr><tr><td style="text-align:center">荣耀V20</td><td>荣耀</td><td>2699</td></tr></tbody></table><p>这是目录</p><p>[TOC]</p>]]></content>
+      
+      
       <categories>
-        <category>其他</category>
+          
+          <category> other </category>
+          
       </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2019%2F05%2F05%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
-  </entry>
+      
+      
+    </entry>
+    
+    
+  
+  
 </search>
