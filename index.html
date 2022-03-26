@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script src="js/jquery-3.6.0.min.js"></script>
+		<script src="js/index.js"></script>
+		<title></title>
+	</head>
+	<body class="row">
+		<div class="col">
+		<div class="body">
+			<!--图片-->
+			<img src="img/011.png"/>
+			
+			<!--顶部信息-->
+			<div class="head">
+				
+				<div class="title"><p>高祖之風</p></div>
+				<div class="name"><p>刘备</p></div>
+				<div class="mark lord"><p>主公</p></div>
+				<div class="mark sex"><img src="img/male.png"></div>
+				<div class="mark camp"><p>汉</p></div>
+				<div class="mark hp"><p>4/4</p></div>
+				
+			</div>
+			
+			<!--技能-->
+			<div class="skills">
+				
+				<div class="skill skill3" >
+					<div class="marks skillname1"><p>激将</p></div>
+					<span class="badge rounded-pill bg-dark tag">主公</span>
+					<div class="text skilltext1"><p>
+					准备阶段，你可以令一名其他汉势力角色摸一张牌，然后其可以对你选择的另一名角色使用【杀】。
+					</p></div>
+				</div>
+				
+				<div class="skill skill2" >
+					<div class="marks skillname2"><p>弘毅</p></div>
+					<span class="badge rounded-pill bg-dark tag">回合</span>
+					<div class="text skilltext2"><p>
+					你可以将一张牌当任意基本牌使用或打出；<i>你于回合内以此法使用牌时摸一张牌。</i>
+					</p>
+					</div>
+				</div>
+			
+				<div class="skill skill1" >
+					<span class="badge rounded-pill bg-dark tag"></span>
+					<div class="marks skillname1"><p>仁德</p></div>
+					<div class="text skilltext1"><p>
+					出牌阶段，你可以将任意张牌交给其他角色。
+					</p></div>
+				</div>
+				
+			</div>
+			
+		</div>
+		</div>
+		
+		<!--表单-->
+		<div class="col">
+		<form>
+			<div class="form row g-2">
+				<div class="input-group">
+					<input type="file" id="img" class="form-control"accept="image/png, image/jpeg"/>
+					<label for="img" class="input-group-text">上传图片</label>
+				</div>
+				<div class="form-floating col-md-3">
+				  <input type="text" class="form-control" id="name" placeholder="text" maxlength="4">
+				  <label class="form-label">武将名字</label>
+				</div>
+				<div class="form-floating col-md-4">
+				  <input type="text" class="form-control" id="title" placeholder="text" maxlength="6">
+				  <label class="form-label">武将称号</label>
+				</div>
+				
+				<div class="form-floating col-md-3">
+					<select class="form-select" id="lord">
+					  <option value="普通" >普通</option>
+					  <option value="主公" selected>主公</option>
+					</select>
+					<label class="form-label">类别</label>
+				</div>
+				
+				<div class="form-floating col-md-2">
+					<select class="form-select" id="camp">
+					  <option  value="汉" selected>汉</option>
+					  <option value="魏">魏</option>
+					  <option value="吴">吴</option>
+					  <option value="群">群</option>
+					</select>
+					<label class="form-label">势力</label>
+				</div>
+				
+				<div class="form-floating col-md-3">
+					<select class="form-select" id="sex">
+					  <option value="male"selected>男</option>
+					  <option value="female">女</option>
+					  <option value="sex">无</option>
+					</select>
+					<label class="form-label">性别</label>
+				</div>
+				
+				<div class="form-floating col-md-3">
+					<input type="number" id="hp1" class="form-control" value="4" max="20" min="1"/>
+					<label class="form-label">体力值</label>
+				</div>
+				
+				<div class="form-floating col-md-3">
+					<input type="number" id="hp2" class="form-control" value="4" max="20" min="1"/>
+					<label class="form-label">体力上限</label>
+				</div>
+				
+				<div class="form-floating col-md-3">
+					<input type="number" id="skill" class="form-control" value="2" max="3" min="1"/>
+					<label class="form-label">技能数量</label>
+				</div>
+				
+				<div class="mb-3 row g-2 sskill1">	
+					<div class="form-floating col-md-4">	
+						<input type="text" id="skillname1" class="form-control" maxlength="2" placeholder="text"/>
+						<label class="form-label">技能名字</label>
+					</div>
+					<div class="form-floating col-md-4">
+						<select class="form-select" id="tag1">
+						  <option  value="" selected>无</option>
+						  <option value="锁定">锁定技</option>
+						  <option value="阶段">阶段技</option>
+						  <option value="回合">回合技</option>
+						  <option value="轮次">轮次技</option>
+						  <option value="限定">限定技</option>
+						  <option value="觉醒">觉醒技</option>
+						  <option value="主公">主公技</option>
+						  <option value="转换">转换技</option>
+						</select>
+						<label class="form-label">技能标签</label>
+					</div>
+					<div class="form-floating col-md-12"> 
+					  <textarea class="form-control" id="skilltext1" maxlength="99" placeholder="text"></textarea>
+					  <label for="skilltext1" class="form-label">技能描述</label>
+					</div>
+				</div>
+				
+				<div class="mb-3 row g-2 sskill2">
+					
+					<div class="form-floating col-md-4">
+						<input type="text" id="skillname2" class="form-control" maxlength="2" placeholder="text"/>
+						<label class="form-label">技能名字</label>
+					</div>
+					<div class="form-floating col-md-4">
+						<select class="form-select" id="tag2">
+						<option  value="" selected>无</option>
+						<option value="锁定">锁定技</option>
+						<option value="阶段">阶段技</option>
+						<option value="回合">回合技</option>
+						<option value="轮次">轮次技</option>
+						<option value="限定">限定技</option>
+						<option value="觉醒">觉醒技</option>
+						<option value="主公">主公技</option>
+						<option value="转换">转换技</option>
+						  
+						</select>
+						<label class="form-label">技能标签</label>
+					</div>
+					<div class="form-floating col-md-12"> 
+					  <textarea class="form-control" id="skilltext2" maxlength="99" placeholder="text"></textarea>
+					  <label for="skilltext2" class="form-label">技能描述</label>
+					</div>
+				</div>
+				
+				<div class="mb-3 row g-2 sskill3">
+					<div class="form-floating col-md-4">	
+						<input type="text" id="skillname3" class="form-control" maxlength="2" placeholder="text"/>
+						<label class="form-label">技能名字</label>
+					</div>
+					<div class="form-floating col-md-4">
+						<select class="form-select" id="tag3">
+						  <option  value="" selected>无</option>
+						  <option value="锁定">锁定技</option>
+						  <option value="阶段">阶段技</option>
+						  <option value="回合">回合技</option>
+						  <option value="轮次">轮次技</option>
+						  <option value="限定">限定技</option>
+						  <option value="觉醒">觉醒技</option>
+						  <option value="主公">主公技</option>
+						  <option value="转换">转换技</option>
+						</select>
+						<label class="form-label">技能标签</label>
+					</div>
+					<div class="form-floating col-md-12"> 
+					  <textarea class="form-control" id="skilltext3" maxlength="99" placeholder="text"></textarea>
+					  <label for="skilltext3" class="form-label">技能描述</label>
+					</div>
+				</div>
+				
+				<div class="col-md-6">
+					<button type="button" class="btn btn-outline-primary" id="preview">预览</button>
+				</div>
+				
+				<div class="col-md-6">
+					<a type="button" class="btn btn-outline-primary" id="download">下载</a>
+				</div>
+			</div>
+		</form>
+		
+		</div>
+		
+	
+		
+	</body>
+	
+</html>
