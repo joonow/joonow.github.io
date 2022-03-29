@@ -1,60 +1,78 @@
 $(document).ready(function(){
 	
-	/*初始技能数量*/
-	$(".sskill3").hide();
-	$(".skill3").hide();
-	
-	/*名字与称号位置*/
-	var nameleft=parseInt($(".name p").css("width"))/2+15;
-	$(".name").css("left",nameleft+"px");
-	var titleleft=parseInt($(".title p").css("width"))/2;
-	$(".title").css("left",titleleft+"px");
-	
-	$("#preview").click(function(){
-		
-		/*名字、称号、技能、标签文本*/
-		$(".name p").text($("#name").val());
-		$(".title p").text($("#title").val());
-		$(".camp p").text($("#camp").val());
-		$(".skillname1 p").text($("#skillname1").val());
-		$(".skillname2 p").text($("#skillname2").val());
-		$(".skillname3 p").text($("#skillname3").val());
-		$(".skilltext1 p").text($("#skilltext1").val());
-		$(".skilltext2 p").text($("#skilltext2").val());
-		$(".skilltext3 p").text($("#skilltext3").val());
-		$(".skill1 span").text($("#tag1").val());
-		$(".skill2 span").text($("#tag2").val());
-		$(".skill3 span").text($("#tag3").val());
-
-		/*名字与称号位置*/
-		nameleft=parseInt($(".name p").css("width"))/2+15;
-		$(".name").css("left",nameleft+"px");
-		titleleft=parseInt($(".title p").css("width"))/2;
-		$(".title").css("left",titleleft+"px");
-		
-		/*是否主公武将*/
-		if ($("#lord").val()=="主公") {
-			$(".lord").show();
-		} else{
-			$(".lord").hide();
+	//图片上传
+	$("#img").change(function(){
+		let file = $('#img').get(0).files[0];
+		let reader = new FileReader();
+		reader.readAsDataURL(file);
+		reader.onload = function(result){
+		    let img = $(".img").get(0);
+		    img.src = result.target.result;
 		};
-		
-		/*性别*/
-		var sexname=$("#sex").val();
-		var sexurl="img/"+sexname+".png";
-		$(".sex img").attr("src",sexurl);
-		
-		/*体力*/
-		var hp1=parseInt($("#hp1").val());
-		var hp2=parseInt($("#hp2").val());
-		$(".hp p").text(hp1+"/"+hp2);
-		if (hp2>9) {
-			$(".hp p").css("font-size","16px");
-		} else{
-			$(".hp p").css("font-size","24px");
+	});
+	
+	//图片大小
+	$("#size").change(function(){
+		switch($("#size").val()){
+			case "w":
+			$(".img").css("width","500px");
+			$(".img").css("height","auto");
+			/*$("#site1").removeAttr("disabled");
+			$("#site2").attr("disabled","true");*/
+			break;
+			case "h":
+			$(".img").css("width","auto");
+			$(".img").css("height","650px");
+			/*$("#site2").removeAttr("disabled");
+			$("#site1").attr("disabled","true");*/
 		}
+	});
 		
-		/*势力主题颜色*/
+	//图片垂直位置
+	var ph;
+	$("#site1").change(function(){
+		ph=parseInt($(".img").css("height"));
+		ch=0-(ph-650)/2;
+		switch($("#site1").val()){
+			case "b":
+			$(".img").css("bottom","0");
+			$(".img").css("top","auto");
+			break;
+			case "t":
+			$(".img").css("bottom","auto");
+			$(".img").css("top","50px");
+			break;
+			case "c":
+			$(".img").css("bottom",ch+"px");
+			$(".img").css("top","auto");
+		}
+	});
+	
+	//图片水平位置
+	var pw;
+	$("#site2").change(function(){
+		pw=parseInt($(".img").css("width"));
+		cw=0-(pw-500)/2;
+		switch($("#site2").val()){
+			case "l":
+			$(".img").css("left","0");
+			$(".img").css("right","auto");
+			break;
+			case "r":
+			$(".img").css("left","auto");
+			$(".img").css("right","0");
+			break;
+			case "c":
+			$(".img").css("left",cw+"px");
+			$(".img").css("right","auto");
+		}
+	});
+
+	//势力
+	$("#camp").change(function(){
+		$(".camp p").text($("#camp").val());
+		
+		//势力主题颜色
 		switch($("#camp").val()){
 			case "汉":
 			$(".head").css("background-color","red");
@@ -75,15 +93,85 @@ $(document).ready(function(){
 			$(".title p").css("color","rgba(170, 85, 0, 0.4)");
 			break;
 			case "群":
-			$(".head").css("background-color","black");
-			$(".marks").css("background-color","black");
-			$(".mark").css("background-color","dimgray");
-			$(".title p").css("color","rgba(105, 105, 105, 1.0)");
-		}	
-			
+			$(".head").css("background-color","rgb(57, 57, 57)");
+			$(".marks").css("background-color","dimgray");
+			$(".mark").css("background-color","gray");
+			$(".title p").css("color","rgba(128, 128, 128, 0.4)");
+		};
+	
 	});
 	
-	/*技能数量*/
+	//主题颜色
+	var c1;
+	var c2;
+	$("#color1").change(function(){
+		c1=$("#color1").val();
+		$(".head").css("background-color",c1);
+		$(".marks").css("background-color",c1);
+	});
+	$("#color2").change(function(){
+		c2=$("#color2").val();
+		$(".title p").css("color",c2);
+		$(".mark").css("background-color",c2);
+	});
+	
+	//是否主公
+	$("#lord").change(function(){
+		if ($("#lord").val()=="主公") {
+			$(".lord").show();
+		} else{
+			$(".lord").hide();
+		};
+	});
+	
+	//性别
+	$("#sex").change(function(){
+		$(".sex p").text($("#sex").val());
+	});
+	
+	//体力
+	var hp1;
+	var hp2;
+	$("#hp1").change(function(){
+		hp1=$("#hp1").val();
+		hp2=$("#hp2").val();
+		$(".hp p").text(hp1+"/"+hp2);
+		if (hp2>9) {
+			$(".hp p").css("font-size","14px");
+		} else{
+			$(".hp p").css("font-size","20px");
+		}
+	});
+	$("#hp2").change(function(){
+		hp1=$("#hp1").val();
+		hp2=$("#hp2").val();
+		$(".hp p").text(hp1+"/"+hp2);
+		if (hp2>9) {
+			$(".hp p").css("font-size","14px");
+		} else{
+			$(".hp p").css("font-size","20px");
+		}
+	});
+	
+	//名字
+	var namesite;
+	$("#name").change(function(){
+		$(".name p").text($("#name").val());
+		namesite=parseInt($(".name p").css("width"))/2+15;
+		$(".name").css("left",namesite+"px");
+	});
+	
+	//称号
+	var titlesite;
+	$("#title").change(function(){
+		$(".title p").text($("#title").val());
+		titlesite=parseInt($(".title p").css("width"))/2;
+		$(".title").css("left",titlesite+"px");
+	});
+	
+	//技能数量
+	$(".sskill3").hide();
+	$(".skill3").hide();
 	$("#skill").change(function(){
 		switch($("#skill").val()){
 			case "1":
@@ -106,21 +194,43 @@ $(document).ready(function(){
 		}	
 	});
 	
-	/*图片上传*/
-	$("#img").change(function(){
-		let file = $('#img').get(0).files[0];
-		let reader = new FileReader();
-		reader.readAsDataURL(file);
-		reader.onload = function(result){
-		    let newimg = $(".body img").get(0);
-		    newimg.src = result.target.result;
-		}
-	})	
-
-	/*图片下载*/
+	//技能名字
+	$("#skillname1").change(function(){
+		$(".skillname1 p").text($("#skillname1").val());
+	});
+	$("#skillname2").change(function(){
+		$(".skillname2 p").text($("#skillname2").val());
+	});
+	$("#skillname3").change(function(){
+		$(".skillname3 p").text($("#skillname3").val());
+	});
+	
+	// 技能标签
+	$("#tag1").change(function(){
+		$(".skill1 span").text($("#tag1").val());
+	});
+	$("#tag2").change(function(){
+		$(".skill2 span").text($("#tag2").val());
+	});
+	$("#tag3").change(function(){
+		$(".skill3 span").text($("#tag3").val());
+	});
+	
+	//技能描述
+	$("#skilltext1").change(function(){
+		$(".skilltext1 p").html($("#skilltext1").val());
+	});
+	$("#skilltext2").change(function(){
+		$(".skilltext2 p").html($("#skilltext2").val());
+	});
+	$("#skilltext3").change(function(){
+		$(".skilltext3 p").html($("#skilltext3").val());
+	});
+	
+	//图片下载
 	$("#download").click(function(){
 		alert("暂时无法完成呢");
 	});
-
+	
 	
 });
