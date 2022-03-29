@@ -194,6 +194,13 @@ $(document).ready(function(){
 		}	
 	});
 	
+	//字体大小
+	var ts;
+	$("#textsize").change(function(){
+		ts=$("#textsize").val();
+		$(".text p").css("font-size",ts+"px");
+	});
+	
 	//技能名字
 	$("#skillname1").change(function(){
 		$(".skillname1 p").text($("#skillname1").val());
@@ -215,6 +222,20 @@ $(document).ready(function(){
 	$("#tag3").change(function(){
 		$(".skill3 span").text($("#tag3").val());
 	});
+	
+	//重置描述
+	$("#remake1").click(function(){
+		$("#skilltext1").val("");
+		$(".skilltext1 p").html("");
+	});
+	$("#remake2").click(function(){
+		$("#skilltext2").val("");
+		$(".skilltext2 p").html("");
+	});
+	$("#remake3").click(function(){
+		$("#skilltext3").val("");
+		$(".skilltext3 p").html("");
+	})
 	
 	//技能描述
 	$("#skilltext1").change(function(){
