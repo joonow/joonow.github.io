@@ -32,23 +32,19 @@
 				<div class="skill skill3" >
 					<div class="marks skillname1"><p></p></div>
 					<span class="badge rounded-pill bg-dark tag"></span>
-					<div class="text skilltext1"><p>
-					
-					</p></div>
+					<div class="text skilltext1"><p></p></div>
 				</div>
 				
 				<div class="skill skill2" >
 					<div class="marks skillname2"><p></p></div>
 					<span class="badge rounded-pill bg-dark tag"></span>
-					<div class="text skilltext2"><p></p>
-					</div>
+					<div class="text skilltext2"><p></p></div>
 				</div>
 			
 				<div class="skill skill1" >
 					<span class="badge rounded-pill bg-dark tag"></span>
 					<div class="marks skillname1"><p></p></div>
-					<div class="text skilltext1"><p>
-					</p></div>
+					<div class="text skilltext1"><p></p></div>
 				</div>
 				
 			</div>
@@ -127,35 +123,7 @@
 					<label class="form-label">颜色二</label>
 				</div>
 				
-				<div class="form-floating col-md-3">
-					<select class="form-select" id="lord">
-					  <option value="普通" selected>普通</option>
-					  <option value="主公">主公</option>
-					</select>
-					<label class="form-label">类别</label>
-				</div>
-				
-				
-				<div class="form-floating col-md-3">
-					<select class="form-select" id="sex">
-					  <option value="♂"selected>男</option>
-					  <option value="♀">女</option>
-					  <option value="⚲">无</option>
-					</select>
-					<label class="form-label">性别</label>
-				</div>
-				
-				<div class="form-floating col-md-3">
-					<input type="number" id="hp1" class="form-control" value="4" max="20" min="1"/>
-					<label class="form-label">体力值</label>
-				</div>
-				
-				<div class="form-floating col-md-3">
-					<input type="number" id="hp2" class="form-control" value="4" max="20" min="1"/>
-					<label class="form-label">上限</label>
-				</div>
-				
-				<div class="form-floating col-md-4">
+				<div class="form-floating col-md-5">
 				  <input type="text" class="form-control" id="name" placeholder="text" maxlength="7">
 				  <label class="form-label">武将名字</label>
 				</div>
@@ -165,9 +133,41 @@
 				  <label class="form-label">武将称号</label>
 				</div>
 				
-				<div class="form-floating col-md-3">
+				<div class="form-floating col-md-2">
+					<select class="form-select" id="lord">
+					  <option value="普通" selected>否</option>
+					  <option value="主公">是</option>
+					</select>
+					<label class="form-label">主公</label>
+				</div>
+				
+				<div class="form-floating col-md-4">
+					<select class="form-select" id="sex">
+					  <option value="♂"selected>男</option>
+					  <option value="♀">女</option>
+					  <option value="⚲">无</option>
+					</select>
+					<label class="form-label">性别</label>
+				</div>
+				
+				<div class="form-floating col-md-4">
+					<input type="number" id="hp1" class="form-control" value="4" max="20" min="1"/>
+					<label class="form-label">体力值</label>
+				</div>
+				
+				<div class="form-floating col-md-4">
+					<input type="number" id="hp2" class="form-control" value="4" max="20" min="1"/>
+					<label class="form-label">体力上限</label>
+				</div>
+				
+				<div class="form-floating col-md-4">
 					<input type="number" id="skill" class="form-control" value="2" max="3" min="1"/>
 					<label class="form-label">技能数量</label>
+				</div>
+				
+				<div class="form-floating col-md-4">
+					<input type="number" id="textsize" class="form-control" value="19" max="30" min="10"/>
+					<label class="form-label">技能描述字体大小</label>
 				</div>
 				
 				<!--技能编辑-->
@@ -203,8 +203,12 @@
 						<label class="form-label">技能标签</label>
 					</div>
 					
+					<div class="form-floating col-md-4">
+						<button type="button" id="remake1" class="btn btn-outline-danger btn-lg">重置描述</button>
+					</div>
+					
 					<div class="form-floating col-md-12"> 
-					  <textarea class="form-control" id="skilltext1" maxlength="99" placeholder="text"></textarea>
+					  <textarea class="form-control" id="skilltext1" maxlength="200" placeholder="text"></textarea>
 					  <label for="skilltext1" class="form-label">技能描述</label>
 					</div>
 				</div>
@@ -242,8 +246,12 @@
 						<label class="form-label">技能标签</label>
 					</div>
 					
+					<div class="form-floating col-md-4">
+						<button type="button" id="remake2" class="btn btn-outline-danger btn-lg">重置描述</button>
+					</div>
+					
 					<div class="form-floating col-md-12"> 
-					  <textarea class="form-control" id="skilltext2" maxlength="99" placeholder="text"></textarea>
+					  <textarea class="form-control" id="skilltext2" maxlength="200" placeholder="text"></textarea>
 					  <label for="skilltext2" class="form-label">技能描述</label>
 					</div>
 				</div>
@@ -280,8 +288,12 @@
 						<label class="form-label">技能标签</label>
 					</div>
 					
+					<div class="form-floating col-md-4">
+						<button type="button" id="remake3" class="btn btn-outline-danger btn-lg">重置描述</button>
+					</div>
+					
 					<div class="form-floating col-md-12"> 
-					  <textarea class="form-control" id="skilltext3" maxlength="99" placeholder="text"></textarea>
+					  <textarea class="form-control" id="skilltext3" maxlength="200" placeholder="text"></textarea>
 					  <label for="skilltext3" class="form-label">技能描述</label>
 					</div>
 				</div>
