@@ -19,7 +19,7 @@
 				
 				<div class="title"><p></p></div>
 				<div class="name"><p></p></div>
-				<div class="mark lord"><p>主公</p></div>
+				<!-- <div class="mark lord"><p>主公</p></div> -->
 				<div class="mark sex"><p>♂</p></div>
 				<div class="mark camp"><p>汉</p></div>
 				<div class="mark hp"><p>4/4</p></div>
@@ -31,18 +31,18 @@
 				
 				<div class="skill skill3" >
 					<div class="marks skillname3"><p></p></div>
-					<span class="badge rounded-pill bg-dark tag"></span>
+					<span class="badge rounded-pill bg-danger tag"></span>
 					<div class="text skilltext3"><p></p></div>
 				</div>
 				
 				<div class="skill skill2" >
 					<div class="marks skillname2"><p></p></div>
-					<span class="badge rounded-pill bg-dark tag"></span>
+					<span class="badge rounded-pill bg-danger tag"></span>
 					<div class="text skilltext2"><p></p></div>
 				</div>
 			
 				<div class="skill skill1" >
-					<span class="badge rounded-pill bg-dark tag"></span>
+					<span class="badge rounded-pill bg-danger tag"></span>
 					<div class="marks skillname1"><p></p></div>
 					<div class="text skilltext1"><p></p></div>
 				</div>
@@ -90,16 +90,6 @@
 					<label class="form-label">图片位置</label>
 				</div>
 				
-				<!--<div class="form-floating col-md-4">
-					<select class="form-select" id="camp">
-					  <option value="汉" selected>汉</option>
-					  <option value="魏">魏</option>
-					  <option value="吴">吴</option>
-					  <option value="群">群</option>
-					</select>
-					<label class="form-label">势力</label>
-				</div>-->
-				
 				<div class="form-floating col-md-4">
 					<input class="form-control" list="camplist" id="camp" value="汉">
 					<datalist id="camplist">
@@ -145,7 +135,14 @@
 					<select class="form-select" id="sex">
 					  <option value="♂"selected>男</option>
 					  <option value="♀">女</option>
-					  <option value="⚲">无</option>
+					  <option value="⚤">男与女</option>
+					  <option value="⚢">女与女</option>
+					  <option value="⚣">男与男</option>
+					  <option value="⚦">变性男</option>
+					  <option value="⚥">跨性别一</option>
+					  <option value="⚧">跨性别二</option>
+					  <option value="⚬">无性别</option>
+					  <option value="⚲">中性</option>
 					</select>
 					<label class="form-label">性别</label>
 				</div>
@@ -166,7 +163,7 @@
 				</div>
 				
 				<div class="form-floating col-md-4">
-					<input type="number" id="textsize" class="form-control" value="19" max="30" min="10"/>
+					<input type="number" id="textsize" class="form-control" value="20" max="30" min="10"/>
 					<label class="form-label">技能描述字体大小</label>
 				</div>
 				
@@ -195,10 +192,10 @@
 					<div class="form-floating col-md-4">
 						<input class="form-control" list="taglist1" id="tag1" value="">
 						<datalist id="taglist1">
-							<option value="锁定技">
-							<option value="阶段技">
-							<option value="回合技">
-							<option value="限定技">
+							<option value="锁定">
+							<option value="阶段">
+							<option value="回合">
+							<option value="限定">
 						</datalist>
 						<label class="form-label">技能标签</label>
 					</div>
@@ -208,7 +205,7 @@
 					</div>
 					
 					<div class="form-floating col-md-12"> 
-					  <textarea class="form-control" id="skilltext1" maxlength="200" placeholder="text"></textarea>
+					  <textarea class="form-control" id="skilltext1" maxlength="300" placeholder="text"></textarea>
 					  <label for="skilltext1" class="form-label">技能描述</label>
 					</div>
 				</div>
@@ -238,10 +235,10 @@
 					<div class="form-floating col-md-4">
 						<input class="form-control" list="taglist2" id="tag2" value="">
 						<datalist id="taglist2">
-							<option value="锁定技">
-							<option value="阶段技">
-							<option value="回合技">
-							<option value="限定技">
+							<option value="锁定">
+							<option value="阶段">
+							<option value="回合">
+							<option value="限定">
 						</datalist>
 						<label class="form-label">技能标签</label>
 					</div>
@@ -251,7 +248,7 @@
 					</div>
 					
 					<div class="form-floating col-md-12"> 
-					  <textarea class="form-control" id="skilltext2" maxlength="200" placeholder="text"></textarea>
+					  <textarea class="form-control" id="skilltext2" maxlength="300" placeholder="text"></textarea>
 					  <label for="skilltext2" class="form-label">技能描述</label>
 					</div>
 				</div>
@@ -280,10 +277,10 @@
 					<div class="form-floating col-md-4">
 						<input class="form-control" list="taglist3" id="tag3" value="">
 						<datalist id="taglist3">
-							<option value="锁定技">
-							<option value="阶段技">
-							<option value="回合技">
-							<option value="限定技">
+							<option value="锁定">
+							<option value="阶段">
+							<option value="回合">
+							<option value="限定">
 						</datalist>
 						<label class="form-label">技能标签</label>
 					</div>
@@ -293,7 +290,7 @@
 					</div>
 					
 					<div class="form-floating col-md-12"> 
-					  <textarea class="form-control" id="skilltext3" maxlength="200" placeholder="text"></textarea>
+					  <textarea class="form-control" id="skilltext3" maxlength="300" placeholder="text"></textarea>
 					  <label for="skilltext3" class="form-label">技能描述</label>
 					</div>
 				</div>
