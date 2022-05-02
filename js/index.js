@@ -75,28 +75,32 @@ $(document).ready(function(){
 		//势力主题颜色
 		switch($("#camp").val()){
 			case "汉":
-			$(".head").css("background-color","red");
-			$(".marks").css("background-color","red");
-			$(".mark").css("background-color","orange");
-			$(".title p").css("color","rgba(255, 255, 0, 0.4)");
+			$(".head").css("background-color","#d30000");
+			$(".marks").css("background-color","#d30000");
+			$(".mark").css("background-color","#ffaa00");
+			$(".title p").css("color","rgb(255, 170, 0)");
 			break;
 			case "魏":
 			$(".head").css("background-color","dodgerblue");
 			$(".marks").css("background-color","dodgerblue");
 			$(".mark").css("background-color","purple");
-			$(".title p").css("color","rgba(128, 0, 128, 0.4)");
+			$(".title p").css("color","rgb(128, 0, 128)");
 			break;
 			case "吴":
-			$(".head").css("background-color","green");
-			$(".marks").css("background-color","green");
-			$(".mark").css("background-color","sienna");
-			$(".title p").css("color","rgba(170, 85, 0, 0.4)");
+			$(".head").css("background-color","rgb(0, 170, 0)");
+			$(".marks").css("background-color","rgb(0, 170, 0)");
+			$(".mark").css("background-color","rgb(85, 85, 0)");
+			$(".title p").css("color","rgb(85, 85, 0)");
 			break;
 			case "群":
-			$(".head").css("background-color","rgb(57, 57, 57)");
-			$(".marks").css("background-color","dimgray");
-			$(".mark").css("background-color","gray");
-			$(".title p").css("color","rgba(128, 128, 128, 0.4)");
+			// $(".head").css("background-color","rgb(57, 57, 57)");
+			// $(".marks").css("background-color","rgb(57, 57, 57)");
+			// $(".mark").css("background-color","gray");
+			// $(".title p").css("color","rgb(128, 128, 128)");
+			 $(".head").css("background-color","rgb(110, 110, 110)");
+			 $(".marks").css("background-color","rgb(110, 110, 110)");
+			 $(".mark").css("background-color","rgb(40, 40, 40)");
+			 $(".title p").css("color","rgb(40, 40, 40)");
 		};
 	
 	});
@@ -118,9 +122,10 @@ $(document).ready(function(){
 	//是否主公
 	$("#lord").change(function(){
 		if ($("#lord").val()=="主公") {
-			$(".lord").show();
+			$(".camp").css("background-color","#ffff00");
+			$(".camp p").css("color","#000000");
 		} else{
-			$(".lord").hide();
+			$(".camp p").css("color","#ffffff");
 		};
 	});
 	
@@ -157,7 +162,7 @@ $(document).ready(function(){
 	var namesite;
 	$("#name").change(function(){
 		$(".name p").text($("#name").val());
-		namesite=parseInt($(".name p").css("width"))/2+15;
+		namesite=parseInt($(".name p").css("width"))/2+20;
 		$(".name").css("left",namesite+"px");
 	});
 	
@@ -165,7 +170,7 @@ $(document).ready(function(){
 	var titlesite;
 	$("#title").change(function(){
 		$(".title p").text($("#title").val());
-		titlesite=parseInt($(".title p").css("width"))/2;
+		titlesite=parseInt($(".title p").css("width"))/2+10;
 		$(".title").css("left",titlesite+"px");
 	});
 	
@@ -215,12 +220,51 @@ $(document).ready(function(){
 	// 技能标签
 	$("#tag1").change(function(){
 		$(".skill1 span").text($("#tag1").val());
+		switch ($(".skill1 span").text()){
+			case "锁定":
+			$(".skill1 span").attr("class","badge rounded-pill bg-dark tag");
+			break;
+			case "阶段":
+			$(".skill1 span").attr("class","badge rounded-pill bg-success tag");
+			break;
+			case "回合":
+			$(".skill1 span").attr("class","badge rounded-pill bg-primary tag");
+			break;
+			case "限定":
+			$(".skill1 span").attr("class","badge rounded-pill bg-danger tag");
+		};
 	});
 	$("#tag2").change(function(){
 		$(".skill2 span").text($("#tag2").val());
+		switch ($(".skill2 span").text()){
+			case "锁定":
+			$(".skill2 span").attr("class","badge rounded-pill bg-dark tag");
+			break;
+			case "阶段":
+			$(".skill2 span").attr("class","badge rounded-pill bg-success tag");
+			break;
+			case "回合":
+			$(".skill2 span").attr("class","badge rounded-pill bg-primary tag");
+			break;
+			case "限定":
+			$(".skill2 span").attr("class","badge rounded-pill bg-danger tag");
+		};
 	});
 	$("#tag3").change(function(){
 		$(".skill3 span").text($("#tag3").val());
+		switch ($(".skill3 span").text()){
+			case "锁定":
+			$(".skill3 span").attr("class","badge rounded-pill bg-dark tag");
+			break;
+			case "阶段":
+			$(".skill3 span").attr("class","badge rounded-pill bg-success tag");
+			break;
+			case "回合":
+			$(".skill3 span").attr("class","badge rounded-pill bg-primary tag");
+			break;
+			case "限定":
+			$(".skill3 span").attr("class","badge rounded-pill bg-danger tag");
+		};
 	});
 	
 	//重置描述
